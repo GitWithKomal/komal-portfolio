@@ -1,5 +1,5 @@
 @'
-# Komal Nimje — Portfolio
+# Komal Nimje â€” Portfolio
 
 Personal portfolio of **Komal Nimje**, a Software Engineer focused on **DevOps, cloud-native engineering, full-stack development, and AI-enabled applications**.
 
