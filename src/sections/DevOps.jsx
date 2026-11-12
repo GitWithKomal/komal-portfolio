@@ -1,55 +1,61 @@
-
 const infrastructureAreas = [
   {
-    number: '01',
-    title: 'Containers',
+    number: "01",
+    title: "Containers & Containerization",
     description:
-      'Build and run containerized applications with Docker and NGINX. QuickServe has been tested locally with a successful HTTP 200 response.',
-    tools: ['Docker', 'Docker Compose', 'NGINX'],
+      "Build, run and manage containerized applications using Docker, Docker Compose and NGINX. QuickServe includes local image builds, container lifecycle management, port mapping and successful HTTP response verification.",
+    tools: ["Docker", "Docker Compose", "NGINX", "GHCR"],
   },
   {
-    number: '02',
-    title: 'Orchestration',
+    number: "02",
+    title: "CI/CD Automation",
     description:
-      'Practice Kubernetes deployments, services, configuration, health probes and resource limits in a local kind cluster, with Helm for packaging.',
-    tools: ['Kubernetes', 'kind', 'Helm'],
+      "Build automated delivery workflows using GitHub Actions and Jenkins. Practise source validation, Docker image builds, version tagging, registry authentication and publishing.",
+    tools: ["GitHub Actions", "Jenkins", "Git", "YAML"],
   },
   {
-    number: '03',
-    title: 'CI/CD',
+    number: "03",
+    title: "AWS Cloud Deployment",
     description:
-      'Work with GitHub Actions and Jenkins pipelines to automate build workflows and publish container images to GitHub Container Registry.',
-    tools: ['Jenkins', 'GitHub Actions', 'GHCR'],
+      "Successfully tested the main QuickServe deployment on AWS EC2 using GitHub Actions, OIDC-based authentication, IAM role permissions and AWS Systems Manager for remote deployment.",
+    tools: ["AWS EC2", "IAM", "GitHub OIDC", "AWS SSM"],
   },
   {
-    number: '04',
-    title: 'Configuration Automation',
+    number: "04",
+    title: "Kubernetes & Helm",
     description:
-      'Use Ansible playbooks to configure Linux hosts, install NGINX and manage service configuration across a controller and remote VM.',
-    tools: ['Ansible', 'YAML', 'Linux'],
+      "Practise Kubernetes Deployments, Services, replica management, resource requests and limits, HPA, pod scheduling and troubleshooting in local Minikube clusters. Use Helm for configurable application packaging.",
+    tools: ["Kubernetes", "Minikube", "Helm", "HPA"],
   },
   {
-    number: '05',
-    title: 'Monitoring',
+    number: "05",
+    title: "Configuration Management",
     description:
-      'Explore infrastructure and service monitoring concepts as part of hands-on DevOps labs.',
-    tools: ['Nagios'],
+      "Use Ansible inventories and playbooks to configure remote Ubuntu hosts, install and configure NGINX, validate services and verify idempotent execution.",
+    tools: ["Ansible", "Ubuntu", "SSH", "YAML"],
   },
   {
-    number: '06',
-    title: 'Linux & Web Infrastructure',
+    number: "06",
+    title: "Monitoring & Observability",
     description:
-      'Work with Linux commands, permissions, networking, web servers and troubleshooting across local containers and virtual machines.',
-    tools: ['Linux', 'NGINX', 'Apache', 'Git'],
+      "Build a separate local Kubernetes monitoring environment using Prometheus, Blackbox Exporter, Grafana and Alertmanager. Practise endpoint probing, metrics collection, dashboards and alert configuration.",
+    tools: ["Prometheus", "Blackbox Exporter", "Grafana", "Alertmanager"],
   },
   {
-    number: '07',
-    title: 'Cloud Infrastructure',
+    number: "07",
+    title: "Infrastructure as Code",
     description:
-      'Practice cloud infrastructure through AWS and GCP labs, including virtual machines, Amazon ECR and an ECS-oriented deployment script.',
-    tools: ['AWS', 'Amazon ECR', 'Amazon ECS', 'GCP'],
+      "Practised Terraform fundamentals using local resources and developed an initial AWS EC2 provisioning configuration. Terraform-based AWS infrastructure provisioning is not yet part of the verified QuickServe deployment pipeline.",
+    tools: ["Terraform", "Infrastructure as Code", "AWS EC2"],
   },
-]
+  {
+    number: "08",
+    title: "Linux & Web Infrastructure",
+    description:
+      "Work with Ubuntu Linux, command-line operations, permissions, networking, web servers and service troubleshooting. Practise NGINX configuration and resolve port conflicts involving Apache.",
+    tools: ["Linux", "Ubuntu", "NGINX", "Apache", "Bash"],
+  },
+];
 
 function DevOps() {
   return (
@@ -65,9 +71,9 @@ function DevOps() {
           </h2>
 
           <p className="mt-5 text-base leading-7 text-[var(--text-secondary)]">
-            Hands-on practice in containerization, CI/CD, orchestration,
-            configuration automation and cloud infrastructure, backed by
-            practical projects and lab work.
+            Building practical experience across CI/CD automation, cloud
+            deployment, containerization, orchestration, infrastructure
+            configuration and observability through hands-on projects and labs.
           </p>
         </div>
 
@@ -75,9 +81,7 @@ function DevOps() {
           {infrastructureAreas.map((area) => (
             <article
               key={area.number}
-              className={`group rounded-xl border border-[var(--border)] bg-[var(--surface)] p-7 transition-all duration-300 hover:border-[var(--accent)] sm:p-8 ${
-                area.number === '07' ? 'lg:col-span-3' : ''
-              }`}
+              className="group rounded-xl border border-[var(--border)] bg-[var(--surface)] p-7 transition-all duration-300 hover:border-[var(--accent)] sm:p-8"
             >
               <div className="flex items-start justify-between">
                 <span className="font-mono text-sm font-medium text-[var(--accent-soft)] transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(124,92,255,0.45)]">
@@ -110,8 +114,8 @@ function DevOps() {
         </div>
 
         <article className="mt-8 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-7 sm:p-9">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-            <div className="max-w-2xl">
+          <div className="flex flex-col gap-6">
+            <div className="max-w-3xl">
               <p className="font-mono text-xs tracking-wider text-[var(--accent-soft)]">
                 FEATURED DEVOPS PROJECT
               </p>
@@ -121,20 +125,37 @@ function DevOps() {
               </h3>
 
               <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
-                A practical DevOps project connecting container builds,
-                automated workflows and deployment labs. The local Docker
-                image serves a versioned NGINX page, verified with an HTTP
-                200 response. The project also includes GitHub Actions,
-                Jenkins, GHCR, Kubernetes, Helm and Ansible practice.
+                A hands-on DevOps engineering project demonstrating automated
+                application delivery, containerization and cloud deployment. The
+                main QuickServe application uses GitHub Actions to build and
+                publish versioned Docker images to GitHub Container Registry,
+                then authenticates with AWS through OIDC and IAM to deploy the
+                image remotely to EC2 using Systems Manager.
+              </p>
+
+              <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
+                The AWS deployment was successfully tested, including container
+                replacement and application access through the EC2 endpoint.
+                Additional repository environments cover Jenkins image
+                publishing, local Minikube and Helm exercises, Ansible
+                configuration management, and a local monitoring stack with
+                Prometheus, Blackbox Exporter, Grafana and Alertmanager. A
+                separate React, Docker, ECR and ECS practice lab is also
+                maintained.
               </p>
 
               <div className="mt-5 flex flex-wrap gap-2">
                 {[
-                  'Docker & NGINX',
-                  'GitHub Actions',
-                  'Jenkins & GHCR',
-                  'Kubernetes & Helm',
-                  'Ansible',
+                  "Docker & NGINX",
+                  "GitHub Actions",
+                  "Jenkins",
+                  "GHCR",
+                  "AWS EC2",
+                  "OIDC & IAM",
+                  "AWS SSM",
+                  "Kubernetes & Helm",
+                  "Ansible",
+                  "Prometheus & Grafana",
                 ].map((tool) => (
                   <span
                     key={tool}
@@ -146,20 +167,52 @@ function DevOps() {
               </div>
             </div>
 
-            <a
-              href="https://github.com/GitWithKomal/QuickServe"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex shrink-0 items-center gap-2 self-start rounded-lg border border-[var(--border)] px-4 py-3 text-sm font-medium transition-colors hover:border-[var(--accent)] hover:text-[var(--accent-soft)]"
-            >
-              View on GitHub
-              <span aria-hidden="true">↗</span>
-            </a>
+            <div className="flex flex-wrap gap-3 border-t border-[var(--border)] pt-6">
+              <a
+                href="https://github.com/GitWithKomal/QuickServe"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-4 py-3 text-sm font-medium transition-colors hover:border-[var(--accent)] hover:text-[var(--accent-soft)]"
+              >
+                Source Code
+                <span aria-hidden="true">↗</span>
+              </a>
+
+              <a
+                href="https://gitwithkomal.github.io/QuickServe/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-4 py-3 text-sm font-medium transition-colors hover:border-[var(--accent)] hover:text-[var(--accent-soft)]"
+              >
+                Live Application
+                <span aria-hidden="true">↗</span>
+              </a>
+
+              <a
+                href="https://github.com/GitWithKomal/QuickServe/actions"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-4 py-3 text-sm font-medium transition-colors hover:border-[var(--accent)] hover:text-[var(--accent-soft)]"
+              >
+                CI/CD Workflows
+                <span aria-hidden="true">↗</span>
+              </a>
+
+              <a
+                href="https://github.com/GitWithKomal/QuickServe/actions/runs/42997207347"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-4 py-3 text-sm font-medium transition-colors hover:border-[var(--accent)] hover:text-[var(--accent-soft)]"
+              >
+                AWS Deployment Proof
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
         </article>
       </div>
     </section>
-  )
+  );
 }
 
-export default DevOps
+export default DevOps;

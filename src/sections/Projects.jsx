@@ -1,37 +1,87 @@
+
 import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
     number: "01",
-    title: "Veyra",
-    category: "Cloud-Native Roadside Assistance",
+    title: "QuickServe",
+    category: "DevOps Engineering & AWS Deployment",
     description:
-      "A roadside assistance and mechanic booking platform with location-aware mechanic discovery, role-based workflows and real-time service notifications.",
-    caseStudy: "/case-studies/veyra",
+      "A hands-on DevOps engineering project demonstrating automated application delivery and cloud deployment. GitHub Actions builds and publishes versioned Docker images to GitHub Container Registry, then uses GitHub OIDC, AWS IAM and Systems Manager to deploy the application remotely to EC2. The AWS deployment was successfully tested, with application access verified through the EC2 endpoint.",
+    links: [
+      {
+        label: "Source Code",
+        href: "https://github.com/GitWithKomal/QuickServe",
+        external: true,
+      },
+      {
+        label: "Live Application",
+        href: "https://gitwithkomal.github.io/QuickServe/",
+        external: true,
+      },
+      {
+        label: "CI/CD Workflows",
+        href: "https://github.com/GitWithKomal/QuickServe/actions",
+        external: true,
+      },
+      {
+        label: "AWS Deployment Proof",
+        href: "https://github.com/GitWithKomal/QuickServe/actions/runs/42997207347",
+        external: true,
+      },
+    ],
   },
   {
     number: "02",
-    title: "DockMind AI",
-    category: "AI-Powered Document Intelligence",
-    description:
-      "A document question-answering system that combines retrieval-augmented generation, embeddings and vector search to provide contextual answers from uploaded PDFs.",
-    caseStudy: "/case-studies/dockmind-ai",
-  },
-  {
-    number: "03",
     title: "DEVRP V2",
     category: "Dynamic Emergency Vehicle Routing",
     description:
-      "A dynamic emergency vehicle route planning system combining geospatial services, backend routing logic and a web-based interface for emergency navigation.",
-    caseStudy: "/case-studies/devrp-v2",
+      "A dynamic emergency vehicle route planning system combining geospatial services, backend routing logic and a web-based interface to support emergency navigation and route planning.",
+    links: [
+      {
+        label: "Case Study",
+        href: "/case-studies/devrp-v2",
+      },
+    ],
+  },
+  {
+    number: "03",
+    title: "DockMind AI",
+    category: "AI-Powered Document Intelligence",
+    description:
+      "A document question-answering system that combines retrieval-augmented generation, embeddings and vector search to provide contextual answers from uploaded PDF documents.",
+    links: [
+      {
+        label: "Case Study",
+        href: "/case-studies/dockmind-ai",
+      },
+    ],
   },
   {
     number: "04",
+    title: "Veyra",
+    category: "Cloud-Native Roadside Assistance",
+    description:
+      "A roadside assistance and mechanic booking platform featuring location-aware mechanic discovery, role-based workflows and real-time service notifications.",
+    links: [
+      {
+        label: "Case Study",
+        href: "/case-studies/veyra",
+      },
+    ],
+  },
+  {
+    number: "05",
     title: "FinHabit",
     category: "Personal Finance Management",
     description:
-      "A full-stack finance management application for tracking income, expenses and habits with authentication and administrative analytics.",
-    caseStudy: "/case-studies/finhabit",
+      "A full-stack finance management application for tracking income, expenses and financial habits, with authentication and administrative analytics.",
+    links: [
+      {
+        label: "Case Study",
+        href: "/case-studies/finhabit",
+      },
+    ],
   },
 ];
 
@@ -52,8 +102,9 @@ function Projects() {
           </h2>
 
           <p className="mt-5 text-base leading-7 text-[var(--text-secondary)]">
-            A selection of systems I've designed and built across software
-            engineering, cloud-native development and AI-enabled applications.
+            A selection of systems I've built across DevOps engineering,
+            cloud infrastructure, full-stack development and AI-enabled
+            applications.
           </p>
         </div>
 
@@ -65,7 +116,7 @@ function Projects() {
             >
               <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
                 <div className="max-w-3xl">
-                  <div className="flex items-center gap-4">
+                  <div className="flex flex-wrap items-center gap-4">
                     <span className="font-mono text-sm font-medium text-[var(--accent-soft)] transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(124,92,255,0.45)]">
                       {project.number}
                     </span>
@@ -84,14 +135,19 @@ function Projects() {
                   </p>
                 </div>
 
-                <div className="shrink-0 lg:pt-1">
-                  <a
-                    href={project.caseStudy}
-                    className="inline-flex items-center gap-2 text-sm font-medium text-[var(--text-primary)] transition-colors hover:text-[var(--accent-soft)]"
-                  >
-                    Case Study
-                    <ArrowUpRight size={15} />
-                  </a>
+                <div className="flex shrink-0 flex-wrap gap-x-5 gap-y-3 lg:max-w-xs lg:justify-end lg:pt-1">
+                  {project.links.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noreferrer" : undefined}
+                      className="inline-flex items-center gap-2 text-sm font-medium text-[var(--text-primary)] transition-colors hover:text-[var(--accent-soft)]"
+                    >
+                      {link.label}
+                      <ArrowUpRight size={15} />
+                    </a>
+                  ))}
                 </div>
               </div>
             </article>

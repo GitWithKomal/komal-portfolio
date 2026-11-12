@@ -1,4 +1,4 @@
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from "lucide-react";
 const experiences = [
   {
     number: "01",
@@ -118,7 +118,7 @@ function Experience() {
           ))}
         </div>
 
-        <div className="mt-8 grid gap-5 md:grid-cols-2">
+        <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           <article className="flex flex-col rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8">
             <div className="flex items-start gap-4">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--background)]">
@@ -234,6 +234,64 @@ function Experience() {
                 className="inline-flex items-center gap-2 text-sm font-medium text-[var(--accent-soft)] transition-colors hover:text-white"
               >
                 View Certificate
+                <ArrowUpRight size={14} aria-hidden="true" />
+              </a>
+            </div>
+          </article>
+
+          <article className="flex flex-col rounded-xl border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8">
+            <div className="flex items-start gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--background)]">
+                <span
+                  aria-hidden="true"
+                  className="text-xl font-semibold text-[var(--accent-soft)]"
+                >
+                  IBM
+                </span>
+              </div>
+
+              <div>
+                <p className="font-mono text-xs tracking-wider text-[var(--accent-soft)]">
+                  DEVOPS COURSE
+                </p>
+
+                <h4 className="mt-2 text-lg font-semibold tracking-tight">
+                  Introduction to DevOps
+                </h4>
+
+                <p className="mt-1 text-sm text-[var(--text-secondary)]">
+                  IBM · Coursera
+                </p>
+              </div>
+            </div>
+
+            <p className="mt-5 text-sm leading-6 text-[var(--text-secondary)]">
+              Completed an IBM-authorized course covering foundational DevOps
+              concepts, practices and workflows, offered through Coursera.
+            </p>
+
+            <p className="mt-4 font-mono text-xs text-[var(--text-secondary)]">
+              COMPLETED · NOVEMBER 2, 2026
+            </p>
+
+            <div className="mt-auto flex flex-wrap gap-5 pt-6">
+              <a
+                href="/certificates/ibm-introduction-to-devops.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium text-[var(--accent-soft)] transition-colors hover:text-white"
+              >
+                View Certificate
+                <ArrowUpRight size={14} aria-hidden="true" />
+              </a>
+
+              <a
+                href="https://coursera.org/verify/06XQULOFDG83"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium text-[var(--accent-soft)] transition-colors hover:text-white"
+              >
+                Verify Credential
                 <ArrowUpRight size={14} aria-hidden="true" />
               </a>
             </div>
