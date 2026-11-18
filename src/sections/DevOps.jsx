@@ -3,50 +3,50 @@ const infrastructureAreas = [
     number: "01",
     title: "Containers & Containerization",
     description:
-      "Build, run and manage containerized applications using Docker, Docker Compose and NGINX. QuickServe includes local image builds, container lifecycle management, port mapping and successful HTTP response verification.",
-    tools: ["Docker", "Docker Compose", "NGINX", "GHCR"],
+      "Build, run and manage containerized applications using Docker and Docker Compose. Apply containerization across QuickServe and BuildOrbit, including image creation, container lifecycle management and registry workflows.",
+    tools: ["Docker", "Docker Compose", "GHCR", "Amazon ECR"],
   },
   {
     number: "02",
     title: "CI/CD Automation",
     description:
-      "Build automated delivery workflows using GitHub Actions and Jenkins. Practise source validation, Docker image builds, version tagging, registry authentication and publishing.",
+      "Build automated delivery workflows using GitHub Actions and Jenkins. Practise application build workflows, Docker image creation, registry publishing and deployment automation across QuickServe and BuildOrbit.",
     tools: ["GitHub Actions", "Jenkins", "Git", "YAML"],
   },
   {
     number: "03",
-    title: "AWS Cloud Deployment",
+    title: "AWS Cloud & Infrastructure",
     description:
-      "Successfully tested the main QuickServe deployment on AWS EC2 using GitHub Actions, OIDC-based authentication, IAM role permissions and AWS Systems Manager for remote deployment.",
-    tools: ["AWS EC2", "IAM", "GitHub OIDC", "AWS SSM"],
+      "Work with AWS infrastructure across two projects: QuickServe's tested EC2 deployment using GitHub OIDC, IAM and Systems Manager, and BuildOrbit's historically completed EKS deployment with Terraform-provisioned cloud infrastructure.",
+    tools: ["AWS EC2", "Amazon EKS", "Amazon ECR", "IAM", "AWS SSM"],
   },
   {
     number: "04",
     title: "Kubernetes & Helm",
     description:
-      "Practise Kubernetes Deployments, Services, replica management, resource requests and limits, HPA, pod scheduling and troubleshooting in local Minikube clusters. Use Helm for configurable application packaging.",
-    tools: ["Kubernetes", "Minikube", "Helm", "HPA"],
+      "Work with Kubernetes application deployments, Services, container orchestration and Helm. BuildOrbit includes a historically completed Amazon EKS application deployment, while QuickServe provides additional local Minikube practice with replicas, resource configuration, HPA and troubleshooting.",
+    tools: ["Kubernetes", "Amazon EKS", "Minikube", "Helm", "HPA"],
   },
   {
     number: "05",
+    title: "Infrastructure as Code",
+    description:
+      "Use Terraform for AWS infrastructure provisioning in BuildOrbit, including VPC, subnets, IAM configuration, EKS cluster and managed node group. Also practise Terraform fundamentals and initial AWS EC2 configuration separately.",
+    tools: ["Terraform", "AWS VPC", "Subnets", "IAM", "EKS"],
+  },
+  {
+    number: "06",
     title: "Configuration Management",
     description:
       "Use Ansible inventories and playbooks to configure remote Ubuntu hosts, install and configure NGINX, validate services and verify idempotent execution.",
     tools: ["Ansible", "Ubuntu", "SSH", "YAML"],
   },
   {
-    number: "06",
+    number: "07",
     title: "Monitoring & Observability",
     description:
-      "Build a separate local Kubernetes monitoring environment using Prometheus, Blackbox Exporter, Grafana and Alertmanager. Practise endpoint probing, metrics collection, dashboards and alert configuration.",
-    tools: ["Prometheus", "Blackbox Exporter", "Grafana", "Alertmanager"],
-  },
-  {
-    number: "07",
-    title: "Infrastructure as Code",
-    description:
-      "Practised Terraform fundamentals using local resources and developed an initial AWS EC2 provisioning configuration. Terraform-based AWS infrastructure provisioning is not yet part of the verified QuickServe deployment pipeline.",
-    tools: ["Terraform", "Infrastructure as Code", "AWS EC2"],
+      "Work with Prometheus and Grafana monitoring in the BuildOrbit EKS project. Separately practise a local Kubernetes monitoring environment using Prometheus, Blackbox Exporter, Grafana and Alertmanager for metrics collection, dashboards and alert configuration.",
+    tools: ["Prometheus", "Grafana", "Alertmanager", "Blackbox Exporter"],
   },
   {
     number: "08",
@@ -72,8 +72,9 @@ function DevOps() {
 
           <p className="mt-5 text-base leading-7 text-[var(--text-secondary)]">
             Building practical experience across CI/CD automation, cloud
-            deployment, containerization, orchestration, infrastructure
-            configuration and observability through hands-on projects and labs.
+            infrastructure, containerization, Kubernetes orchestration,
+            infrastructure as code, configuration management and observability
+            through hands-on projects and labs.
           </p>
         </div>
 
@@ -113,11 +114,12 @@ function DevOps() {
           ))}
         </div>
 
+        {/* QuickServe featured project */}
         <article className="mt-8 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-7 sm:p-9">
           <div className="flex flex-col gap-6">
             <div className="max-w-3xl">
               <p className="font-mono text-xs tracking-wider text-[var(--accent-soft)]">
-                FEATURED DEVOPS PROJECT
+                FEATURED DEVOPS PROJECT · AWS EC2
               </p>
 
               <h3 className="mt-3 text-2xl font-semibold tracking-tight">
@@ -126,11 +128,11 @@ function DevOps() {
 
               <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
                 A hands-on DevOps engineering project demonstrating automated
-                application delivery, containerization and cloud deployment. The
-                main QuickServe application uses GitHub Actions to build and
-                publish versioned Docker images to GitHub Container Registry,
-                then authenticates with AWS through OIDC and IAM to deploy the
-                image remotely to EC2 using Systems Manager.
+                application delivery, containerization and cloud deployment.
+                GitHub Actions builds and publishes versioned Docker images to
+                GitHub Container Registry, then authenticates with AWS through
+                OIDC and IAM to deploy the image remotely to EC2 using Systems
+                Manager.
               </p>
 
               <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
@@ -138,10 +140,7 @@ function DevOps() {
                 replacement and application access through the EC2 endpoint.
                 Additional repository environments cover Jenkins image
                 publishing, local Minikube and Helm exercises, Ansible
-                configuration management, and a local monitoring stack with
-                Prometheus, Blackbox Exporter, Grafana and Alertmanager. A
-                separate React, Docker, ECR and ECS practice lab is also
-                maintained.
+                configuration management, and a local monitoring stack.
               </p>
 
               <div className="mt-5 flex flex-wrap gap-2">
@@ -174,8 +173,7 @@ function DevOps() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-4 py-3 text-sm font-medium transition-colors hover:border-[var(--accent)] hover:text-[var(--accent-soft)]"
               >
-                Source Code
-                <span aria-hidden="true">↗</span>
+                Source Code <span aria-hidden="true">↗</span>
               </a>
 
               <a
@@ -184,8 +182,7 @@ function DevOps() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-4 py-3 text-sm font-medium transition-colors hover:border-[var(--accent)] hover:text-[var(--accent-soft)]"
               >
-                Live Application
-                <span aria-hidden="true">↗</span>
+                Live Application <span aria-hidden="true">↗</span>
               </a>
 
               <a
@@ -194,8 +191,7 @@ function DevOps() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-4 py-3 text-sm font-medium transition-colors hover:border-[var(--accent)] hover:text-[var(--accent-soft)]"
               >
-                CI/CD Workflows
-                <span aria-hidden="true">↗</span>
+                CI/CD Workflows <span aria-hidden="true">↗</span>
               </a>
 
               <a
@@ -204,8 +200,112 @@ function DevOps() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-4 py-3 text-sm font-medium transition-colors hover:border-[var(--accent)] hover:text-[var(--accent-soft)]"
               >
-                AWS Deployment Proof
-                <span aria-hidden="true">↗</span>
+                AWS Deployment Proof <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        {/* BuildOrbit featured project */}
+        <article className="mt-5 rounded-xl border border-[var(--border)] bg-[var(--surface)] p-7 sm:p-9">
+          <div className="flex flex-col gap-6">
+            <div className="max-w-3xl">
+              <p className="font-mono text-xs tracking-wider text-[var(--accent-soft)]">
+                FEATURED DEVOPS PROJECT · AWS EKS
+              </p>
+
+              <h3 className="mt-3 text-2xl font-semibold tracking-tight">
+                BuildOrbit
+              </h3>
+
+              <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
+                A cloud-native, multi-tier application deployment project
+                comprising a React frontend, Node.js and Express backend, and
+                MongoDB database. The project demonstrates Docker
+                containerization, Amazon ECR image storage, Terraform-based AWS
+                infrastructure provisioning and Kubernetes orchestration on
+                Amazon EKS.
+              </p>
+
+              <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">
+                The EKS deployment was completed historically. GitHub Actions
+                workflows support the project delivery process, while Helm,
+                Prometheus and Grafana are included in the deployment and
+                monitoring setup. A separate GitHub Pages dashboard presents the
+                project architecture and deployment evidence.
+              </p>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {[
+                  "AWS",
+                  "Amazon EKS",
+                  "Amazon ECR",
+                  "Terraform",
+                  "Docker",
+                  "Kubernetes",
+                  "GitHub Actions",
+                  "Helm",
+                  "Ansible",
+                  "Prometheus",
+                  "Grafana",
+                  "React",
+                  "Node.js",
+                  "MongoDB",
+                ].map((tool) => (
+                  <span
+                    key={tool}
+                    className="rounded-md border border-[var(--border)] bg-[var(--background)] px-2.5 py-1.5 font-mono text-[11px] text-[var(--text-secondary)]"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-3 border-t border-[var(--border)] pt-6">
+              <a
+                href="https://gitwithkomal.github.io/BuildOrbit/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-4 py-3 text-sm font-medium transition-colors hover:border-[var(--accent)] hover:text-[var(--accent-soft)]"
+              >
+                Live Dashboard <span aria-hidden="true">↗</span>
+              </a>
+
+              <a
+                href="https://github.com/GitWithKomal/BuildOrbit"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-4 py-3 text-sm font-medium transition-colors hover:border-[var(--accent)] hover:text-[var(--accent-soft)]"
+              >
+                Source Code <span aria-hidden="true">↗</span>
+              </a>
+
+              <a
+                href="https://github.com/GitWithKomal/BuildOrbit/actions"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-4 py-3 text-sm font-medium transition-colors hover:border-[var(--accent)] hover:text-[var(--accent-soft)]"
+              >
+                CI/CD Workflows <span aria-hidden="true">↗</span>
+              </a>
+
+              <a
+                href="https://github.com/GitWithKomal/BuildOrbit/actions/runs/44269829107"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-4 py-3 text-sm font-medium transition-colors hover:border-[var(--accent)] hover:text-[var(--accent-soft)]"
+              >
+                Deployment Proof <span aria-hidden="true">↗</span>
+              </a>
+
+              <a
+                href="https://github.com/GitWithKomal/BuildOrbit/tree/main/public/evidence"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-[var(--border)] px-4 py-3 text-sm font-medium transition-colors hover:border-[var(--accent)] hover:text-[var(--accent-soft)]"
+              >
+                Evidence Screenshots <span aria-hidden="true">↗</span>
               </a>
             </div>
           </div>

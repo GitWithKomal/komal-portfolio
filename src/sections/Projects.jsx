@@ -1,11 +1,10 @@
-
 import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
     number: "01",
     title: "QuickServe",
-    category: "DevOps Engineering & AWS Deployment",
+    category: "DevOps Engineering & AWS EC2 Deployment",
     description:
       "A hands-on DevOps engineering project demonstrating automated application delivery and cloud deployment. GitHub Actions builds and publishes versioned Docker images to GitHub Container Registry, then uses GitHub OIDC, AWS IAM and Systems Manager to deploy the application remotely to EC2. The AWS deployment was successfully tested, with application access verified through the EC2 endpoint.",
     links: [
@@ -33,6 +32,40 @@ const projects = [
   },
   {
     number: "02",
+    title: "BuildOrbit",
+    category: "Cloud-Native DevOps Capstone | AWS EKS",
+    description:
+      "A cloud-native, multi-tier application deployment project demonstrating infrastructure provisioning and Kubernetes-based application delivery on Amazon EKS. The project brings together a React frontend, Node.js and Express backend, and MongoDB database, with Docker, Amazon ECR, Terraform, GitHub Actions and Helm. The EKS deployment was completed historically, and a live GitHub Pages dashboard presents the architecture and deployment evidence.",
+    links: [
+      {
+        label: "Live Dashboard",
+        href: "https://gitwithkomal.github.io/BuildOrbit/",
+        external: true,
+      },
+      {
+        label: "Source Code",
+        href: "https://github.com/GitWithKomal/BuildOrbit",
+        external: true,
+      },
+      {
+        label: "CI/CD Workflows",
+        href: "https://github.com/GitWithKomal/BuildOrbit/actions",
+        external: true,
+      },
+      {
+        label: "Deployment Proof",
+        href: "https://github.com/GitWithKomal/BuildOrbit/actions/runs/44269829107",
+        external: true,
+      },
+      {
+        label: "Evidence Screenshots",
+        href: "https://github.com/GitWithKomal/BuildOrbit/tree/main/public/evidence",
+        external: true,
+      },
+    ],
+  },
+  {
+    number: "03",
     title: "DEVRP V2",
     category: "Dynamic Emergency Vehicle Routing",
     description:
@@ -45,7 +78,7 @@ const projects = [
     ],
   },
   {
-    number: "03",
+    number: "04",
     title: "DockMind AI",
     category: "AI-Powered Document Intelligence",
     description:
@@ -58,7 +91,7 @@ const projects = [
     ],
   },
   {
-    number: "04",
+    number: "05",
     title: "Veyra",
     category: "Cloud-Native Roadside Assistance",
     description:
@@ -71,7 +104,7 @@ const projects = [
     ],
   },
   {
-    number: "05",
+    number: "06",
     title: "FinHabit",
     category: "Personal Finance Management",
     description:
@@ -102,9 +135,8 @@ function Projects() {
           </h2>
 
           <p className="mt-5 text-base leading-7 text-[var(--text-secondary)]">
-            A selection of systems I've built across DevOps engineering,
-            cloud infrastructure, full-stack development and AI-enabled
-            applications.
+            A selection of systems I've built across DevOps engineering, cloud
+            infrastructure, full-stack development and AI-enabled applications.
           </p>
         </div>
 
